@@ -1,0 +1,53 @@
+1)
+HTTP1: YEAR(1991)
+*  For every TCP connection there is only one request and one response.
+*  HTTP1.x used to process text commands to complete request-response cycles
+*  Can define 16 status codes, the error prompt is not specific enough.
+*  Performance Optimizatio:-Provides support for caching to deliver pages faster.
+*  Headers are sent on every request leading to a lot of duplicate data being sent uncompressed across the wire.
+*  SSL is not required but recommended. Digest authentication used in HTTP1.1 is an improvement over HTTP1.0. HTTPS uses SSL/TLS for secure encrypted communication.
+
+HTTP2: YEAR(2015)           
+*  Uses multiplexing, where over a single TCP connection resources to be delivered are interleaved and arrive at the client almost at the same time. 
+It is done using streams which can be prioritized, can have dependencies and individual flow control. 
+It also provides a feature called server push that allows the server to send data that the client will need but has not yet requested.
+*  HTTP/2 will use binary commands (in 1s and 0s) to execute the same tasks
+*  Underlying semantics of HTTP such as headers, status codes remains the same.
+ * Performance Optimization:-  Removes the need for unnecessary optimization hacks.
+*  Header compression is included by default in HTTP/2 using HPACK.
+*  Though security is still not mandatory, it is mostly encrypted  since almost all clients require traffic to be encrypted. 
+It also has some minimum standards, such as minimum key size for encryption. TLS 1.2 etc.
+
+2)  HTTP VERSION HISTORY
+HTTP is the underlying protocol of the World Wide Web. Developed by Tim Berners-Lee and his team between 1989-1991.
+The initial version of HTTP had no version number; it has been later called 0.9 to differentiate it from the later versions
+since 1995, well before the publication of HTTP/1.0 document the next year, proper standardization was in progress. 
+The first standardized version of HTTP, HTTP/1.1 was published in early 1997, only a few months after HTTP/1.0.HTTP/1.1 is more than 15 years of extensions.
+HTTP/2 – A protocol for greater performance.
+HTTP didn't stop evolving upon the release of HTTP/2. Like with HTTP/1.x previously, HTTP's extensibility is still being used to add new features.
+ Notably, we can cite new extensions of the HTTP protocol appearing in 2016.
+HTTP/3 - HTTP over QUIC.
+
+3)
+NODE JS
+*An big difference is that in Node.js you control the environment.
+ Unless you are building an open source application that anyone can deploy anywhere, you know which version of Node you will run the application on.
+*Node uses the CommonJS module system,you use require() in Node.
+* In Node everything is a module. You must keep your code inside a module
+*Node has "global", which is a predefined global object. It contains several functions that are not available in browsers, cause they are needed for server side works only.
+*Web Platform APIs like Cookies do not exist in Node.js. It donot have the document,window and all the other objects that are provided by the browser.
+BROWSER JS
+*Compared to the browser environment, where you don’t get the luxury to choose what browser your visitors will use, this is very convenient
+*The browser uses ES Modules standard that is being implemented. Example:import in the browser.
+*Moduling is not mandatory in client side JavaScript, i.e. in browsers.
+* Browsers may have an object named "global", but it will be the exact one as "window".
+*In the browser, most of the time is interacted with the DOM, or other Web Platform APIs like Cookies. 
+
+4)       What happens when you type in a URL in an address bar in a browser?
+The browser checks the  DNS record to find the corresponding IP address of the URL. If the requested URL is not in the cache, ISP’s DNS server initiates a DNS query 
+to find the IP address of the server that hosts the URL.The browser initiates a TCP connection with the server.This connection is established using a process called the TCP/IP three-way handshake.
+The browser sends an HTTP request to the webserver.The server handles the request and sends back a response.The browser displays the HTML content for HTML responses.
+ The browser displays the HTML content in phases. First, it will render the bare bone HTML skeleton. 
+Then it will check the HTML tags and send out GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. 
+These static files are cached by the browser, so it doesn’t have to fetch them again the next time you visit the page. In the end, you will see the requested page appearing on your browser.
+
